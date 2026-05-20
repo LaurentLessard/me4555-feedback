@@ -1,0 +1,45 @@
+name: Feedback or correction
+description: Report a typo, suggest an improvement, or flag an error on the ME4555 course site.
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: input
+    id: page_url
+    attributes:
+      label: Page URL
+      description: Which page does this concern? (Auto-filled if you came from the "Report issue" button.)
+      placeholder: https://laurentlessard.github.io/me4555/...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Type of feedback
+      options:
+        - Typo or grammar
+        - Broken link or image
+        - Unclear explanation
+        - Factual or technical error
+        - Suggestion for improvement
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        Describe the issue. If reporting a typo or error, quote the offending text so it can be found quickly.
+        For technical errors, briefly explain what's wrong and (if you can) what the correct version should be.
+      placeholder: |
+        In Section 2.4, the sentence "the transfer function is..." should be...
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        Thanks for helping improve the course site. Issues are public; please don't include anything you'd rather keep private (your GitHub username will be associated with this issue).
